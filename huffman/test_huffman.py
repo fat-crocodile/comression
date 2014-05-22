@@ -1,7 +1,7 @@
 import sys
 from coder import Encoder, Decoder
-from huffman import make_code 
-from bounded_huffman import make_code as make_ll_code
+from huffman import make_code_symbols as make_code 
+from bounded_huffman import make_code_symbols as make_ll_code  # ll for lenght-limited
 
 class DummyInputStream(object):
     def __init__(self, data):
