@@ -1,5 +1,6 @@
 """Implement classical Huffman alghorithm"""
 
+
 def make_code_symbols(weights):
     """Input:
         - list of pairs (symbol, weight), simbols with weight 0 are allowed
@@ -7,6 +8,7 @@ def make_code_symbols(weights):
         - list of pairs (symbol, code lenght) in the same order"""
     res = make_code([w for _,w in weights])
     return [(s, l) for (s,_),l in zip(weights, res)]
+
 
 def make_code(weights):
     """Input:
@@ -40,3 +42,4 @@ def make_code(weights):
         res[i] = l
 
     return res
+

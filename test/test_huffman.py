@@ -1,7 +1,8 @@
 import sys
-from coder import Encoder, Decoder
+from prefix_code import Encoder, Decoder
 from huffman import make_code_symbols as make_code 
 from bounded_huffman import make_code_symbols as make_ll_code  # ll for lenght-limited
+
 
 class DummyInputStream(object):
     def __init__(self, data):
@@ -15,6 +16,7 @@ class DummyInputStream(object):
             elif b == '0': pass
             else: raise Exception('Wrong input format')
         return res
+
 
 class DummyOutputStream(object):
     def __init__(self):
@@ -38,6 +40,7 @@ def display_char(c):
         return c
     return '0x%02x' % code
 
+
 def display_list(l):
     columns = 4
     items = ['%s --> %3s' % (display_char(c), i) for c,i in l if i > 0]
@@ -53,6 +56,7 @@ def display_list(l):
 
     res = ['\t'.join(r) for r in rows] 
     return '\n'.join(res)
+
 
 def test_coder(name, data, code):
     encoder = Encoder(code)

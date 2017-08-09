@@ -4,6 +4,7 @@ LAWRENCE L. LARMORE, DANIEL S. HIRSCHBERG
 "A Fast Algorithm for Optimal Length-Limited Huffman Codes"
 Journal of the Association for Computing Machinery, Vol. 37, No. 3, July 1990"""
 
+
 def make_code_symbols(weights, limit):
     """Input: 
         - list of pairs (symbol, weight); symbols with weight 0 allowed
@@ -13,6 +14,7 @@ def make_code_symbols(weights, limit):
     """
     res = make_code([w for _,w in weights], limit)
     return [(s, l) for (s,_),l in zip(weights, res)]
+
 
 def make_code(weights, limit):
     """Input: 
@@ -47,6 +49,7 @@ def make_code(weights, limit):
 
     return res
 
+
 def _merge_coins(c1, c2):
     """Merge two coins in one meta-coin. Each coin in pair (weight, {base coin id --> height in tree})"""
     w = c1[0] + c2[0]
@@ -57,6 +60,7 @@ def _merge_coins(c1, c2):
         d[k] = max(d[k], v)
 
     return w, d
+
 
 def _imerge(iter1, iter2, less_then = None):
     """Merge two sorted iterables in one sorted iterable"""
