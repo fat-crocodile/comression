@@ -1,4 +1,6 @@
 import sys
+sys.path.insert(0, '../src')
+
 from prefix_code import Encoder, Decoder
 from huffman import make_code_symbols as make_code 
 from bounded_huffman import make_code_symbols as make_ll_code  # ll for lenght-limited
